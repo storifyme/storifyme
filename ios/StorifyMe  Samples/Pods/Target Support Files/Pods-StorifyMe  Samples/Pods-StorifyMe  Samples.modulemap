@@ -1,0 +1,6 @@
+framework module Pods_StorifyMe__Samples {
+  umbrella header "Pods-StorifyMe  Samples-umbrella.h"
+
+  export *
+  module * { export * }
+}

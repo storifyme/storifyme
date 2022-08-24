@@ -1,0 +1,71 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target i386-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StorifyMe
+import Foundation
+@_exported import StorifyMe
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+public struct StorifymeSettings {
+  public init(accountId: Swift.String, accessToken: Swift.String, usetWidgetId: Swift.String, color: UIKit.UIColor? = nil)
+}
+@_hasMissingDesignatedInitializers public class InitializeStoryView {
+  public static func createStoryView(parentView: UIKit.UIView, settings: StorifyMe.StorifymeSettings) -> StorifyMe.StoriesCollectionView
+  @objc deinit
+}
+extension UIKit.UIColor {
+  convenience public init(hex: Swift.String)
+  public func hexDescription(_ includeAlpha: Swift.Bool = false) -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class StorifymeSingleton {
+  public static var shared: StorifyMe.StorifymeSingleton
+  public var settings: StorifyMe.StorifymeSettings!
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StoriesCollectionView : UIKit.UICollectionView {
+  @_Concurrency.MainActor(unsafe) weak public var eventDelegate: StorifyMe.StoryEventProtocol?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect, collectionViewLayout layout: UIKit.UICollectionViewLayout)
+  @_Concurrency.MainActor(unsafe) public func refreshStoryData()
+  @objc deinit
+}
+extension StorifyMe.StoriesCollectionView : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGSize
+}
+extension StorifyMe.StoriesCollectionView : UIKit.UICollectionViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StoryView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) weak public var eventDelegate: StorifyMe.StoryEventProtocol? {
+    get
+    set
+  }
+  @objc deinit
+}
+public protocol StoryEventProtocol : AnyObject {
+  func onLoad(stories: [StorifyMe.StoryModel])
+  func onFail(error: Swift.Error)
+  func onStoryOpened(story: StorifyMe.StoryModel, index: Swift.Int)
+  func onStoryClose(story: StorifyMe.StoryModel)
+}
+public struct WebService {
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class Cube3dScrollView : UIKit.UIScrollView, UIKit.UIScrollViewDelegate {
+  @objc override dynamic open func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) open func scrollToViewAtIndex(_ index: Swift.Int, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc open func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
+  @objc deinit
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) public static func returnImage(_ named: Swift.String) -> UIKit.UIImage
+}
+public struct StoryModel : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}

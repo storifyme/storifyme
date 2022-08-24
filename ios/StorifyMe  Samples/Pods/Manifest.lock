@@ -1,0 +1,16 @@
+PODS:
+  - StorifyMe (1.2.6)
+
+DEPENDENCIES:
+  - StorifyMe
+
+SPEC REPOS:
+  trunk:
+    - StorifyMe
+
+SPEC CHECKSUMS:
+  StorifyMe: 37446f47785d0a0cde8b6819f2e7fcc4fa062b6f
+
+PODFILE CHECKSUM: 23c8fa5fe02daf14d3db802f719bc60e46641a24
+
+COCOAPODS: 1.11.3
