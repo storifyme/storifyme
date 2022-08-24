@@ -7,14 +7,16 @@ import android.util.Log
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.storify.android_sdk.EventListener
+
 import com.storify.android_sdk.StorifyMe
+import com.storify.android_sdk.local.Config
 import com.storify.android_sdk.network.model.Story
 import com.storify.android_sdk.ui.view.StoriesView
 
 @Suppress("PrivatePropertyName")
 class MainActivity : AppCompatActivity() {
     private val WIDGET_ID_1 = 5628
-    private val WIDGET_ID_2=6452
+    private val WIDGET_ID_2 = 6452
     private val TAG = this::class.java.name
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,16 +58,31 @@ class MainActivity : AppCompatActivity() {
         }
 
         // initialize view
-        findViewById<StoriesView?>(R.id.storiesView).apply {
+        val storiesView = findViewById<StoriesView?>(R.id.storiesView).apply {
             // set widgetId for stories widget (REQUIRED!)
             this.widgetId = WIDGET_ID_1
-        }.also {
-            // customize view in code (optional)
+        }
+
+        // customize view in code (optional)
+        storiesView.also {
             it.storyBorderColor = Color.RED
             it.storyBorderSize = 10
             it.storyTextColor = Color.CYAN
             it.widgetBackgroundColor = Color.GREEN
-        }.load() // load data from server
+        }
+
+        // construct params to send as query parameters
+        val config = Config.Builder()
+            .setSegments(arrayListOf("vip", "man"))
+            .setQueryParameter("param1", "holiday")
+            .setQueryParameter("param2", "vacation")
+            .build()
+
+        // inject additional params
+        storiesView.config = config
+
+        // load data from server
+        storiesView.load()
 
 
         /**

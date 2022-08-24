@@ -11,9 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.storify.android_sdk.EventListener;
 import com.storify.android_sdk.StorifyMe;
+import com.storify.android_sdk.local.Config;
 import com.storify.android_sdk.network.model.Story;
 import com.storify.android_sdk.ui.view.StoriesView;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -75,6 +77,16 @@ public class MainActivity extends AppCompatActivity {
         storiesView.setStoryBorderSize(10);
         storiesView.setStoryTextColor(Color.CYAN);
         storiesView.setWidgetBackgroundColor(Color.GREEN);
+
+        // construct params to send as query parameters
+        Config config = new Config.Builder()
+            .setSegments(Arrays.asList("vip", "man"))
+            .setQueryParameter("param1", "holiday")
+            .setQueryParameter("param2", "vacation")
+            .build();
+
+        // inject additional params
+        storiesView.setConfig(config);
 
         // load data from server
         storiesView.load();
