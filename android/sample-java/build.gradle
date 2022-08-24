@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('E:\\Android projects\\storifyme-samples\\android\\keystore.jks')
+            storePassword '!storifyme.1'
+            keyAlias 'storifyme'
+            keyPassword '!storifyme.1'
+        }
+    }
     compileSdk 32
 
     defaultConfig {
@@ -18,6 +26,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
