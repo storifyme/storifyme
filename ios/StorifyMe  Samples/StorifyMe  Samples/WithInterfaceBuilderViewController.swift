@@ -16,6 +16,17 @@ class WithInterfaceBuilderViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        
+        var newConf = WidgetConfig()
+        newConf.setQueryParameter(name: "param1", value: "holiday")
+        newConf.setSegments(tags: ["my-stories","men",])
+        
+        storyView.setWidgetConfig(config: newConf)
+        
+        storyView.load()
+        //add delegates (optional)
+        storyView?.eventDelegate = self
+        
         //add delegate (optional)
         storyView.eventDelegate = self
     }
