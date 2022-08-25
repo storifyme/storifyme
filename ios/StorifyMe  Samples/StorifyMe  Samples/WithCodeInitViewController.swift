@@ -24,9 +24,18 @@ class WithCodeInitViewController: UIViewController {
         parentView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         parentView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
-        let settings = StorifymeSettings(accountId: "storify", accessToken: "a92e4e01-b5f5-4a80-bada-916af596e1ab", usetWidgetId: "6452")
+        let settings = StorifyMeSettings(accountId: "storify", accessToken: "a92e4e01-b5f5-4a80-bada-916af596e1ab", usetWidgetId: "6452")
         storyView = InitializeStoryView.createStoryView(parentView:parentView, settings: settings)
         
+        //add custom widget configuration and
+        var newConf = WidgetConfig()
+        newConf.setQueryParameter(name: "param1", value: "holiday")
+        newConf.setQueryParameter(name: "param2", value: "vacation")
+        newConf.setSegments(tags: ["my-stories","men","blog"])
+        
+        storyView?.setWidgetConfig(config: newConf)
+        
+        storyView?.load()
         //add delegates (optional)
         storyView?.eventDelegate = self
     }

@@ -14,12 +14,12 @@
 		AC3DDEC528B63F0E00A39FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3DDEC328B63F0E00A39FDF /* LaunchScreen.storyboard */; };
 		AC3DDECD28B6400000A39FDF /* WithCodeInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3DDECC28B6400000A39FDF /* WithCodeInitViewController.swift */; };
 		AC3DDECF28B6401500A39FDF /* WithInterfaceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3DDECE28B6401500A39FDF /* WithInterfaceBuilderViewController.swift */; };
-		AD7999FF53A65CCBAF262042 /* Pods_StorifyMe__Samples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B588B3EFC9F23A177F8730A /* Pods_StorifyMe__Samples.framework */; };
+		F9CAF1971B99763759569FE7 /* Pods_StorifyMe__Samples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56595B668FB8FA085811054E /* Pods_StorifyMe__Samples.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3643F39DD5E25456A802EDDF /* Pods-StorifyMe  Samples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorifyMe  Samples.debug.xcconfig"; path = "Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples.debug.xcconfig"; sourceTree = "<group>"; };
-		6B588B3EFC9F23A177F8730A /* Pods_StorifyMe__Samples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StorifyMe__Samples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56595B668FB8FA085811054E /* Pods_StorifyMe__Samples.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StorifyMe__Samples.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93049AB1926F4F0C181183AF /* Pods-StorifyMe  Samples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorifyMe  Samples.debug.xcconfig"; path = "Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples.debug.xcconfig"; sourceTree = "<group>"; };
 		AC3DDEB528B63F0C00A39FDF /* StorifyMe  Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StorifyMe  Samples.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3DDEB828B63F0C00A39FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC3DDEBA28B63F0C00A39FDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +29,7 @@
 		AC3DDEC628B63F0E00A39FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3DDECC28B6400000A39FDF /* WithCodeInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithCodeInitViewController.swift; sourceTree = "<group>"; };
 		AC3DDECE28B6401500A39FDF /* WithInterfaceBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithInterfaceBuilderViewController.swift; sourceTree = "<group>"; };
-		ED2D57BFDD639C105332544F /* Pods-StorifyMe  Samples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorifyMe  Samples.release.xcconfig"; path = "Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples.release.xcconfig"; sourceTree = "<group>"; };
+		E3E7BA4A1169BBAAF27998B8 /* Pods-StorifyMe  Samples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorifyMe  Samples.release.xcconfig"; path = "Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,28 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD7999FF53A65CCBAF262042 /* Pods_StorifyMe__Samples.framework in Frameworks */,
+				F9CAF1971B99763759569FE7 /* Pods_StorifyMe__Samples.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13DA7E167ABA11B3DBA7168D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6B588B3EFC9F23A177F8730A /* Pods_StorifyMe__Samples.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6045DAF6CD69E1CE03DD72E1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3643F39DD5E25456A802EDDF /* Pods-StorifyMe  Samples.debug.xcconfig */,
-				ED2D57BFDD639C105332544F /* Pods-StorifyMe  Samples.release.xcconfig */,
+				93049AB1926F4F0C181183AF /* Pods-StorifyMe  Samples.debug.xcconfig */,
+				E3E7BA4A1169BBAAF27998B8 /* Pods-StorifyMe  Samples.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A4B5D72E96B4D7DF82F6CD00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56595B668FB8FA085811054E /* Pods_StorifyMe__Samples.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AC3DDEAC28B63F0C00A39FDF = {
@@ -67,7 +67,7 @@
 				AC3DDEB728B63F0C00A39FDF /* StorifyMe  Samples */,
 				AC3DDEB628B63F0C00A39FDF /* Products */,
 				6045DAF6CD69E1CE03DD72E1 /* Pods */,
-				13DA7E167ABA11B3DBA7168D /* Frameworks */,
+				A4B5D72E96B4D7DF82F6CD00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,12 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC3DDEC928B63F0F00A39FDF /* Build configuration list for PBXNativeTarget "StorifyMe  Samples" */;
 			buildPhases = (
-				733CF6E33FA81C2B5638BAE1 /* [CP] Check Pods Manifest.lock */,
+				D90067E4A14C6C3B6AF8F6EF /* [CP] Check Pods Manifest.lock */,
 				AC3DDEB128B63F0C00A39FDF /* Sources */,
 				AC3DDEB228B63F0C00A39FDF /* Frameworks */,
 				AC3DDEB328B63F0C00A39FDF /* Resources */,
-				C6D21C130339D4204F1DBC6B /* [CP] Embed Pods Frameworks */,
-				62532DCA2A1918506C4C81F6 /* [CP] Copy Pods Resources */,
+				CA9B4B8E350462361C81FA6C /* [CP] Embed Pods Frameworks */,
+				2DEF3B693BA9D8A69316D83B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,7 +164,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		62532DCA2A1918506C4C81F6 /* [CP] Copy Pods Resources */ = {
+		2DEF3B693BA9D8A69316D83B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -181,7 +181,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		733CF6E33FA81C2B5638BAE1 /* [CP] Check Pods Manifest.lock */ = {
+		CA9B4B8E350462361C81FA6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D90067E4A14C6C3B6AF8F6EF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,23 +218,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C6D21C130339D4204F1DBC6B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -372,7 +372,7 @@
 		};
 		AC3DDECA28B63F0F00A39FDF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3643F39DD5E25456A802EDDF /* Pods-StorifyMe  Samples.debug.xcconfig */;
+			baseConfigurationReference = 93049AB1926F4F0C181183AF /* Pods-StorifyMe  Samples.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -401,7 +401,7 @@
 		};
 		AC3DDECB28B63F0F00A39FDF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED2D57BFDD639C105332544F /* Pods-StorifyMe  Samples.release.xcconfig */;
+			baseConfigurationReference = E3E7BA4A1169BBAAF27998B8 /* Pods-StorifyMe  Samples.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
