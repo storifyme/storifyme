@@ -15,9 +15,10 @@ import com.storify.android_sdk.local.Config;
 import com.storify.android_sdk.network.model.Story;
 import com.storify.android_sdk.ui.view.StoriesView;
 
+import org.json.JSONObject;
+
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("FieldCanBeLocal")
 public class MainActivity extends AppCompatActivity {
@@ -36,16 +37,6 @@ public class MainActivity extends AppCompatActivity {
         // attach listener to get notified on various events and actions
         StorifyMe.instance.setEventListener(new EventListener() {
             @Override
-            public void onAction(@NonNull String type, @NonNull Object slide, @NonNull String action) {
-                Log.d(TAG, "onLoad() ");
-            }
-
-            @Override
-            public void onEvent(@NonNull String event, @NonNull Map<String, ?> data) {
-                Log.d(TAG, "onEvent() ");
-            }
-
-            @Override
             public void onFail(@NonNull Exception e) {
                 Log.d(TAG, "onFail() ");
             }
@@ -63,6 +54,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStoryOpened(@NonNull Story story, int index) {
                 Log.d(TAG, "onStoryOpened() ");
+            }
+
+            @Override
+            public void onAction(@NonNull String type, @NonNull JSONObject jsonObject) {
+                Log.d(TAG, "onAction() - type: " + type + " data: " + jsonObject);
+            }
+
+            @Override
+            public void onEvent(@NonNull String type, @NonNull JSONObject jsonObject) {
+                Log.d(TAG, "onEvent() - type: " + type + " data: " + jsonObject);
             }
         });
 

@@ -12,6 +12,7 @@ import com.storify.android_sdk.StorifyMe
 import com.storify.android_sdk.local.Config
 import com.storify.android_sdk.network.model.Story
 import com.storify.android_sdk.ui.view.StoriesView
+import org.json.JSONObject
 
 @Suppress("PrivatePropertyName")
 class MainActivity : AppCompatActivity() {
@@ -48,12 +49,12 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "onStoryClosed() $story")
             }
 
-            override fun onAction(type: String, slide: Any, action: String) {
-                Log.d(TAG, "onAction() - type: $type - slide: $slide - action: $action")
+            override fun onAction(type: String, data: JSONObject) {
+                Log.d(TAG, "onAction() - type: $type - slide: $data")
             }
 
-            override fun onEvent(event: String, data: Map<String, Any>) {
-                Log.d(TAG, "onEvent() - event: $event - data: $data")
+            override fun onEvent(type: String, data: JSONObject) {
+                Log.d(TAG, "onEvent() - type: $type - data: $data")
             }
         }
 
