@@ -54,6 +54,14 @@ class WithCodeInitViewController: UIViewController {
 }
 extension WithCodeInitViewController : StoryEventProtocol
 {
+    func onAction(type: String, data: [String : Any]?) {
+        print("On action \(type), with data \(data)")
+    }
+    
+    func onEvent(type: String, data: [String : Any]?) {
+        print("On event \(type), with data \(data)")
+    }
+    
     func onLoad(stories: [StoryModel]) {
         print("On load call \(stories)")
     }

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/StorifyMe-Swift.h</key>
 		<data>
-		QL4k7CyJm4suYeV7lgJ/5+YwOKM=
+		L6HetIfFg83IEiioohm7fEvjmfw=
 		</data>
 		<key>Headers/StorifyMe.h</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/StorifyMe.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		ETs7hSXO/dGIa+B8VusLJ2FbnG4=
+		8VyF+CQS09OJupJ7zFF+wWIg7IY=
 		</data>
 		<key>Modules/StorifyMe.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		IvM9RiAl5MvKEE+I6uB7kKZosJc=
+		Mx3DtmrAzzzrZoNQirw9f9rBIHM=
 		</data>
 		<key>Modules/StorifyMe.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/StorifyMe.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		O/ACDMDxj51eLp7wjtdVxDg9T24=
+		QuBmcm7Qx3WZpFD1kbgkzySLgfE=
 		</data>
 		<key>Modules/StorifyMe.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		oReho5i9fH3mqxOcOezFrFrqvOc=
+		jrbKB0+SsKLYefSO9rVotaI2PlM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -55,11 +55,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QL4k7CyJm4suYeV7lgJ/5+YwOKM=
+			L6HetIfFg83IEiioohm7fEvjmfw=
 			</data>
 			<key>hash2</key>
 			<data>
-			xz/EZ+7OB+e//Y+vNcShYDkC7Dw/JDE89qGB/OfGyac=
+			DHWvqI4LlIJkKXI1k/Wpkr1IcNIDdXEFmg6h2CiF5tc=
 			</data>
 		</dict>
 		<key>Headers/StorifyMe.h</key>
@@ -88,22 +88,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ETs7hSXO/dGIa+B8VusLJ2FbnG4=
+			8VyF+CQS09OJupJ7zFF+wWIg7IY=
 			</data>
 			<key>hash2</key>
 			<data>
-			3QW+WfXFKczBIL7Be9GPabWZ8kFDSDF7VeFqf+M1iZE=
+			7xSoyYqILtY63qq01uF/FSAVYteUsVEhm2SXGX0I4Bo=
 			</data>
 		</dict>
 		<key>Modules/StorifyMe.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IvM9RiAl5MvKEE+I6uB7kKZosJc=
+			Mx3DtmrAzzzrZoNQirw9f9rBIHM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Y7yERdFP1T7AgDDEa9OXFHWur5i51977u7GdeuaU1sU=
+			oN5eiL1CshJOREBid9SyOH5RSKodn3YNHbeSbJS40SQ=
 			</data>
 		</dict>
 		<key>Modules/StorifyMe.swiftmodule/armv7-apple-ios.swiftdoc</key>
@@ -121,22 +121,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			O/ACDMDxj51eLp7wjtdVxDg9T24=
+			QuBmcm7Qx3WZpFD1kbgkzySLgfE=
 			</data>
 			<key>hash2</key>
 			<data>
-			AZhFOjdUX2BrArAbuCs+TnCYED96uqAEJjsa8rR7wTM=
+			DjY5MJxS2C9q0SuZOiuwByy48+zbKA0X59Xq6/NrTZU=
 			</data>
 		</dict>
 		<key>Modules/StorifyMe.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oReho5i9fH3mqxOcOezFrFrqvOc=
+			jrbKB0+SsKLYefSO9rVotaI2PlM=
 			</data>
 			<key>hash2</key>
 			<data>
-			5dWgdZ8DPvWfLbCb9coEKELtnbl4563SLpgArcajRDM=
+			HtLfXc7LvkJ77LgObvLJ6d1U0LAtzgVY6j7yDnhnq4s=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

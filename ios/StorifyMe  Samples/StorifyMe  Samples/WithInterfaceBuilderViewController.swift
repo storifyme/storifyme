@@ -17,11 +17,11 @@ class WithInterfaceBuilderViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        var newConf = WidgetConfig()
+        /*var newConf = WidgetConfig()
         newConf.setQueryParameter(name: "param1", value: "holiday")
         newConf.setSegments(tags: ["my-stories","men",])
         
-        storyView.setWidgetConfig(config: newConf)
+        storyView.setWidgetConfig(config: newConf)*/
         
         storyView.load()
         //add delegates (optional)
@@ -45,6 +45,14 @@ class WithInterfaceBuilderViewController: UIViewController {
 }
 extension WithInterfaceBuilderViewController : StoryEventProtocol
 {
+    func onAction(type: String, data: [String : Any]?) {
+        print("On action \(type), with data \(data)")
+    }
+    
+    func onEvent(type: String, data: [String : Any]?) {
+        print("On event \(type), with data \(data)")
+    }
+    
     func onLoad(stories: [StoryModel]) {
         print("On load call \(stories)")
     }

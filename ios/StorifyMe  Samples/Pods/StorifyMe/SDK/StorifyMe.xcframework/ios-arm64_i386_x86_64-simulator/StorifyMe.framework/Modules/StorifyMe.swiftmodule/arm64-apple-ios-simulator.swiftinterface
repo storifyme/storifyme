@@ -34,6 +34,14 @@ extension StorifyMe.StoriesCollectionView : UIKit.UICollectionViewDataSource, UI
 extension StorifyMe.StoriesCollectionView : UIKit.UICollectionViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
 }
+extension StorifyMe.StoriesCollectionView : StorifyMe.StoryEventProtocol {
+  @_Concurrency.MainActor(unsafe) public func onLoad(stories: [StorifyMe.StoryModel])
+  @_Concurrency.MainActor(unsafe) public func onFail(error: Swift.Error)
+  @_Concurrency.MainActor(unsafe) public func onStoryOpened(story: StorifyMe.StoryModel, index: Swift.Int)
+  @_Concurrency.MainActor(unsafe) public func onStoryClose(story: StorifyMe.StoryModel)
+  @_Concurrency.MainActor(unsafe) public func onAction(type: Swift.String, data: [Swift.String : Any]?)
+  @_Concurrency.MainActor(unsafe) public func onEvent(type: Swift.String, data: [Swift.String : Any]?)
+}
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StoryView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) weak public var eventDelegate: StorifyMe.StoryEventProtocol? {
     get
@@ -43,16 +51,18 @@ extension StorifyMe.StoriesCollectionView : UIKit.UICollectionViewDelegate {
   @_Concurrency.MainActor(unsafe) public func load()
   @objc deinit
 }
+public struct WidgetConfig {
+  public init()
+  public mutating func setQueryParameter(name: Swift.String, value: Swift.String)
+  public mutating func setSegments(tags: [Swift.String])
+}
 public protocol StoryEventProtocol : AnyObject {
   func onLoad(stories: [StorifyMe.StoryModel])
   func onFail(error: Swift.Error)
   func onStoryOpened(story: StorifyMe.StoryModel, index: Swift.Int)
   func onStoryClose(story: StorifyMe.StoryModel)
-}
-public struct WidgetConfig {
-  public init()
-  public mutating func setQueryParameter(name: Swift.String, value: Swift.String)
-  public mutating func setSegments(tags: [Swift.String])
+  func onAction(type: Swift.String, data: [Swift.String : Any]?)
+  func onEvent(type: Swift.String, data: [Swift.String : Any]?)
 }
 public struct StoryModel : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws

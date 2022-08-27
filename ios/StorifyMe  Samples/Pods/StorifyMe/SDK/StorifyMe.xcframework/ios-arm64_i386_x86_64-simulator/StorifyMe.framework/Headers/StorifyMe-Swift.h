@@ -247,6 +247,7 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 @end
 
 
+
 /// if user need to add story user interface builder this class provide them
 SWIFT_CLASS("_TtC9StorifyMe9StoryView")
 @interface StoryView : UIView
@@ -510,6 +511,7 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 @end
 
 
+
 /// if user need to add story user interface builder this class provide them
 SWIFT_CLASS("_TtC9StorifyMe9StoryView")
 @interface StoryView : UIView
@@ -771,6 +773,7 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 /// return item size
 - (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 /// if user need to add story user interface builder this class provide them
