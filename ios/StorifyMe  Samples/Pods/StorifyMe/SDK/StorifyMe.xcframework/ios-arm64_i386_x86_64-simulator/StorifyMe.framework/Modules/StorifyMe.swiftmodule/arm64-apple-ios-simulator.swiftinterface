@@ -14,19 +14,24 @@ public struct StorifyMeSettings {
   public static func createStoryView(parentView: UIKit.UIView, settings: StorifyMe.StorifyMeSettings) -> StorifyMe.StoriesCollectionView
   @objc deinit
 }
+public struct CubeAttributesAnimator : StorifyMe.LayoutAttributesAnimator {
+  public var perspective: CoreGraphics.CGFloat
+  public var totalAngle: CoreGraphics.CGFloat
+  public init(perspective: CoreGraphics.CGFloat = -1 / 500, totalAngle: CoreGraphics.CGFloat = .pi / 2)
+  public func animate(collectionView: UIKit.UICollectionView, attributes: StorifyMe.AnimatedCollectionViewLayoutAttributes)
+}
 @_hasMissingDesignatedInitializers public class StoeifyMeSingleton {
   public static var shared: StorifyMe.StoeifyMeSingleton
-  public var settings: StorifyMe.StorifyMeSettings!
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StoriesCollectionView : UIKit.UICollectionView {
   @_Concurrency.MainActor(unsafe) weak public var eventDelegate: StorifyMe.StoryEventProtocol?
-  @_Concurrency.MainActor(unsafe) public func load()
-  @_Concurrency.MainActor(unsafe) public func setWidgetConfig(config: StorifyMe.WidgetConfig)
-  @_Concurrency.MainActor(unsafe) public func refreshStoryData()
   @objc deinit
 }
 extension StorifyMe.StoriesCollectionView : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegateFlowLayout {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var numberOfSections: Swift.Int {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
   @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGSize
@@ -42,14 +47,67 @@ extension StorifyMe.StoriesCollectionView : StorifyMe.StoryEventProtocol {
   @_Concurrency.MainActor(unsafe) public func onAction(type: Swift.String, data: [Swift.String : Any]?)
   @_Concurrency.MainActor(unsafe) public func onEvent(type: Swift.String, data: [Swift.String : Any]?)
 }
-@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StoryView : UIKit.UIView {
+public enum Direction : Swift.Int {
+  case undetermined, left, right, bottomUp, topDown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol CubeTransitionViewDelegate : ObjectiveC.NSObject {
+  func pageView(atIndex: Swift.Int) -> UIKit.UIView
+  func numberofPages() -> Swift.Int
+  func pageDidChanged(index: Swift.Int, direction: StorifyMe.Direction)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CubeTransitionInfiniteView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) weak public var delegate: StorifyMe.CubeTransitionViewDelegate?
+  @_Concurrency.MainActor(unsafe) public var offsetCachedPageNumber: Swift.Int
+  @_Concurrency.MainActor(unsafe) public var pageFlipAnimationDuration: Swift.Double
+  @_Concurrency.MainActor(unsafe) public var pageResetAnmationDuration: Swift.Double
+  @_Concurrency.MainActor(unsafe) public var gestureSpeedForPageFlipping: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var gestureDistanceForPageFlipping: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) public func reloadData()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StoryView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) weak public var eventDelegate: StorifyMe.StoryEventProtocol? {
     get
     set
   }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) public init(parentn: UIKit.UIView)
   @_Concurrency.MainActor(unsafe) public func setWidgetConfig(config: StorifyMe.WidgetConfig)
   @_Concurrency.MainActor(unsafe) public func load()
+  @_Concurrency.MainActor(unsafe) public func setSettings(settings: StorifyMe.StorifyMeSettings)
   @objc deinit
+}
+extension StorifyMe.StoryView : StorifyMe.WidgetCustimizationProtocol {
+  @_Concurrency.MainActor(unsafe) public func setStoryImageStyle(imageStyle: StorifyMe.StoryImageStyle)
+  @_Concurrency.MainActor(unsafe) public func setWidgetBackgroundColor(color: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) public func setWidgetBorderWidth(dimension: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func setWidgetBorderColor(color: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) public func setWidgetBorderRadius(dimension: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func setWidgetTitleStyle(widgetTitleStyle: StorifyMe.WidgetTitleStyle)
+  @_Concurrency.MainActor(unsafe) public func setWidgetTitleBorderWidth(dimension: Swift.Int)
+  @_Concurrency.MainActor(unsafe) public func setWidgetTitleBorderColor(color: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) public func setItemTextStyle(textStyle: StorifyMe.StoryTextStyle)
+}
+public struct StoryTextStyle {
+  public init(titleIsVisible: Swift.Bool, titleFont: UIKit.UIFont, titleSize: CoreGraphics.CGFloat, titleColor: UIKit.UIColor)
+}
+public protocol LayoutAttributesAnimator {
+  func animate(collectionView: UIKit.UICollectionView, attributes: StorifyMe.AnimatedCollectionViewLayoutAttributes)
+}
+public enum ImageShape {
+  case circle
+  case square
+  public static func == (a: StorifyMe.ImageShape, b: StorifyMe.ImageShape) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public struct WidgetConfig {
   public init()
@@ -64,7 +122,55 @@ public protocol StoryEventProtocol : AnyObject {
   func onAction(type: Swift.String, data: [Swift.String : Any]?)
   func onEvent(type: Swift.String, data: [Swift.String : Any]?)
 }
+public struct StoryImageStyle {
+  public init(imageHeight: Swift.Int, imageWidth: Swift.Int, imageRadius: Swift.Int, imageBorderWidth: Swift.Int, imageBorderColor: UIKit.UIColor)
+  public init(imageShape: StorifyMe.ImageShape)
+}
 public struct StoryModel : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public struct WidgetTitleStyle {
+  public init(titleIsVisible: Swift.Bool, titleFont: UIKit.UIFont, titleSize: CoreGraphics.CGFloat, titleColor: UIKit.UIColor, titleAlign: UIKit.NSTextAlignment)
+}
+extension StorifyMe.WidgetTitleStyle : Swift.Equatable {
+  public static func == (lhs: StorifyMe.WidgetTitleStyle, rhs: StorifyMe.WidgetTitleStyle) -> Swift.Bool
+}
+public protocol WidgetCustimizationProtocol {
+  func setWidgetBackgroundColor(color: UIKit.UIColor)
+  func setWidgetBorderWidth(dimension: CoreGraphics.CGFloat)
+  func setWidgetBorderColor(color: UIKit.UIColor)
+  func setWidgetBorderRadius(dimension: CoreGraphics.CGFloat)
+  func setWidgetTitleStyle(widgetTitleStyle: StorifyMe.WidgetTitleStyle)
+  func setWidgetTitleBorderWidth(dimension: Swift.Int)
+  func setWidgetTitleBorderColor(color: UIKit.UIColor)
+  func setStoryImageStyle(imageStyle: StorifyMe.StoryImageStyle)
+  func setItemTextStyle(textStyle: StorifyMe.StoryTextStyle)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class AnimatedCollectionViewLayout : UIKit.UICollectionViewFlowLayout {
+  @_Concurrency.MainActor(unsafe) open var animator: StorifyMe.LayoutAttributesAnimator?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open class var layoutAttributesClass: Swift.AnyClass {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutAttributesForElements(in rect: CoreGraphics.CGRect) -> [UIKit.UICollectionViewLayoutAttributes]?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func shouldInvalidateLayout(forBoundsChange newBounds: CoreGraphics.CGRect) -> Swift.Bool
+  @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class AnimatedCollectionViewLayoutAttributes : UIKit.UICollectionViewLayoutAttributes {
+  @_Concurrency.MainActor(unsafe) public var contentView: UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) public var scrollDirection: UIKit.UICollectionView.ScrollDirection
+  @_Concurrency.MainActor(unsafe) public var startOffset: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var middleOffset: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var endOffset: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic open func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension StorifyMe.Direction : Swift.Equatable {}
+extension StorifyMe.Direction : Swift.Hashable {}
+extension StorifyMe.Direction : Swift.RawRepresentable {}
+extension StorifyMe.ImageShape : Swift.Equatable {}
+extension StorifyMe.ImageShape : Swift.Hashable {}

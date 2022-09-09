@@ -9,35 +9,23 @@ import UIKit
 import StorifyMe
 class WithCodeInitViewController: UIViewController {
     
-    var storyView : StoriesCollectionView?
+    @IBOutlet weak var stackVoew: UIStackView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         //Add parent view on view
-        let parentView = UIView()
-        parentView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(parentView)
         
-        parentView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        parentView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        parentView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        parentView.heightAnchor.constraint(equalToConstant: 150).isActive = true
-        
-        let settings = StorifyMeSettings(accountId: "storify", accessToken: "a92e4e01-b5f5-4a80-bada-916af596e1ab", usetWidgetId: "6452")
-        storyView = InitializeStoryView.createStoryView(parentView:parentView, settings: settings)
-        
-        //add custom widget configuration and
-        var newConf = WidgetConfig()
-        newConf.setQueryParameter(name: "param1", value: "holiday")
-        newConf.setQueryParameter(name: "param2", value: "vacation")
-        newConf.setSegments(tags: ["my-stories","men","blog"])
-        
-        storyView?.setWidgetConfig(config: newConf)
-        
-        storyView?.load()
-        //add delegates (optional)
-        storyView?.eventDelegate = self
+        let widgetIdS = ["6824","6825","6826","6827","6828"]
+        for id in widgetIdS
+        {
+            let storyView = StoryView()
+            let settings = StorifyMeSettings(accountId: "mobile-native-test-4200158", accessToken: "cc9052ba-18f2-4906-8e51-be8adb6e89d5", usetWidgetId: id)
+            storyView.setSettings(settings: settings)
+            storyView.load()
+            stackVoew.addArrangedSubview(storyView)
+        }
     }
     
 

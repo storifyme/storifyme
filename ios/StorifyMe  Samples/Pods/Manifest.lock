@@ -1,5 +1,5 @@
 PODS:
-  - StorifyMe (1.2.10)
+  - StorifyMe (1.2.15)
 
 DEPENDENCIES:
   - StorifyMe
@@ -9,7 +9,7 @@ SPEC REPOS:
     - StorifyMe
 
 SPEC CHECKSUMS:
-  StorifyMe: 6bbe5e90a2d86d3f4ce437d1e914943aa5ca1088
+  StorifyMe: b3d737f7a2d5830caa67dedc96efae774d77c6b2
 
 PODFILE CHECKSUM: 23c8fa5fe02daf14d3db802f719bc60e46641a24
 

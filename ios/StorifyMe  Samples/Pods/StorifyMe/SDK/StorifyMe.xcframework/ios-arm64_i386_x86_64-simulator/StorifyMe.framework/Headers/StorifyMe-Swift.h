@@ -198,6 +198,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import Foundation;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -216,8 +218,38 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class UICollectionViewLayout;
+@class UICollectionViewLayoutAttributes;
 @class NSCoder;
+
+/// A <code>UICollectionViewFlowLayout</code> subclass enables custom transitions between cells.
+SWIFT_CLASS("_TtC9StorifyMe28AnimatedCollectionViewLayout")
+@interface AnimatedCollectionViewLayout : UICollectionViewFlowLayout
+/// Overrided so that we can store extra information in the layout attributes.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layoutAttributesClass;)
++ (Class _Nonnull)layoutAttributesClass SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<UICollectionViewLayoutAttributes *> * _Nullable)layoutAttributesForElementsInRect:(CGRect)rect SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// A custom layout attributes that contains extra information.
+SWIFT_CLASS("_TtC9StorifyMe38AnimatedCollectionViewLayoutAttributes")
+@interface AnimatedCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9StorifyMe26CubeTransitionInfiniteView")
+@interface CubeTransitionInfiniteView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@end
+
+@class UICollectionViewLayout;
 
 /// This class is the main  of story view
 /// this class display lis of story items
@@ -226,7 +258,6 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout * _Nonnull)layout SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
-
 
 @class NSIndexPath;
 
@@ -238,6 +269,7 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 @class UICollectionViewCell;
 
 @interface StoriesCollectionView (SWIFT_EXTENSION(StorifyMe)) <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, readonly) NSInteger numberOfSections;
 /// is return count of collection view item
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 /// is return cell for index
@@ -252,8 +284,12 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 SWIFT_CLASS("_TtC9StorifyMe9StoryView")
 @interface StoryView : UIView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
 
 
 
@@ -462,6 +498,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import Foundation;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -480,8 +518,38 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class UICollectionViewLayout;
+@class UICollectionViewLayoutAttributes;
 @class NSCoder;
+
+/// A <code>UICollectionViewFlowLayout</code> subclass enables custom transitions between cells.
+SWIFT_CLASS("_TtC9StorifyMe28AnimatedCollectionViewLayout")
+@interface AnimatedCollectionViewLayout : UICollectionViewFlowLayout
+/// Overrided so that we can store extra information in the layout attributes.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layoutAttributesClass;)
++ (Class _Nonnull)layoutAttributesClass SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<UICollectionViewLayoutAttributes *> * _Nullable)layoutAttributesForElementsInRect:(CGRect)rect SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// A custom layout attributes that contains extra information.
+SWIFT_CLASS("_TtC9StorifyMe38AnimatedCollectionViewLayoutAttributes")
+@interface AnimatedCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9StorifyMe26CubeTransitionInfiniteView")
+@interface CubeTransitionInfiniteView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@end
+
+@class UICollectionViewLayout;
 
 /// This class is the main  of story view
 /// this class display lis of story items
@@ -490,7 +558,6 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout * _Nonnull)layout SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
-
 
 @class NSIndexPath;
 
@@ -502,6 +569,7 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 @class UICollectionViewCell;
 
 @interface StoriesCollectionView (SWIFT_EXTENSION(StorifyMe)) <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, readonly) NSInteger numberOfSections;
 /// is return count of collection view item
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 /// is return cell for index
@@ -516,8 +584,12 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 SWIFT_CLASS("_TtC9StorifyMe9StoryView")
 @interface StoryView : UIView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
 
 
 
@@ -726,6 +798,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import CoreGraphics;
+@import Foundation;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -744,8 +818,38 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class UICollectionViewLayout;
+@class UICollectionViewLayoutAttributes;
 @class NSCoder;
+
+/// A <code>UICollectionViewFlowLayout</code> subclass enables custom transitions between cells.
+SWIFT_CLASS("_TtC9StorifyMe28AnimatedCollectionViewLayout")
+@interface AnimatedCollectionViewLayout : UICollectionViewFlowLayout
+/// Overrided so that we can store extra information in the layout attributes.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layoutAttributesClass;)
++ (Class _Nonnull)layoutAttributesClass SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<UICollectionViewLayoutAttributes *> * _Nullable)layoutAttributesForElementsInRect:(CGRect)rect SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// A custom layout attributes that contains extra information.
+SWIFT_CLASS("_TtC9StorifyMe38AnimatedCollectionViewLayoutAttributes")
+@interface AnimatedCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9StorifyMe26CubeTransitionInfiniteView")
+@interface CubeTransitionInfiniteView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@end
+
+@class UICollectionViewLayout;
 
 /// This class is the main  of story view
 /// this class display lis of story items
@@ -754,7 +858,6 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout * _Nonnull)layout SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
-
 
 @class NSIndexPath;
 
@@ -766,6 +869,7 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 @class UICollectionViewCell;
 
 @interface StoriesCollectionView (SWIFT_EXTENSION(StorifyMe)) <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, readonly) NSInteger numberOfSections;
 /// is return count of collection view item
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 /// is return cell for index
@@ -780,8 +884,12 @@ SWIFT_CLASS("_TtC9StorifyMe21StoriesCollectionView")
 SWIFT_CLASS("_TtC9StorifyMe9StoryView")
 @interface StoryView : UIView
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
 
 
 

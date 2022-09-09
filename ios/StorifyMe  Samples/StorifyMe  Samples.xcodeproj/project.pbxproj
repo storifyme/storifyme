@@ -392,7 +392,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.9;
+				MARKETING_VERSION = 1.2.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.storifyMe.DemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -423,7 +423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.9;
+				MARKETING_VERSION = 1.2.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.storifyMe.DemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

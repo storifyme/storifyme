@@ -15,10 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //Only for interface builder needed
-        let settings = StorifyMeSettings(accountId: "storify", accessToken: "a92e4e01-b5f5-4a80-bada-916af596e1ab", usetWidgetId: "6452")
-        StoeifyMeSingleton.shared.settings = settings
-        
+       
         return true
     }
 
