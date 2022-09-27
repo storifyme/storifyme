@@ -113,6 +113,8 @@
 			dependencies = (
 			);
 			name = "StorifyMe  Samples";
+			packageProductDependencies = (
+			);
 			productName = "StorifyMe  Samples";
 			productReference = AC3DDEB528B63F0C00A39FDF /* StorifyMe  Samples.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +143,8 @@
 				Base,
 			);
 			mainGroup = AC3DDEAC28B63F0C00A39FDF;
+			packageReferences = (
+			);
 			productRefGroup = AC3DDEB628B63F0C00A39FDF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -392,7 +396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.15;
+				MARKETING_VERSION = 1.2.20;
 				PRODUCT_BUNDLE_IDENTIFIER = com.storifyMe.DemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -423,7 +427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.15;
+				MARKETING_VERSION = 1.2.20;
 				PRODUCT_BUNDLE_IDENTIFIER = com.storifyMe.DemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

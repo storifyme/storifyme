@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name StorifyMe
 import Foundation
+import SDWebImage
 @_exported import StorifyMe
 import Swift
 import UIKit
@@ -10,19 +11,11 @@ import _Concurrency
 public struct StorifyMeSettings {
   public init(accountId: Swift.String, accessToken: Swift.String, usetWidgetId: Swift.String, color: UIKit.UIColor? = nil)
 }
-@_hasMissingDesignatedInitializers public class InitializeStoryView {
-  public static func createStoryView(parentView: UIKit.UIView, settings: StorifyMe.StorifyMeSettings) -> StorifyMe.StoriesCollectionView
-  @objc deinit
-}
 public struct CubeAttributesAnimator : StorifyMe.LayoutAttributesAnimator {
   public var perspective: CoreGraphics.CGFloat
   public var totalAngle: CoreGraphics.CGFloat
   public init(perspective: CoreGraphics.CGFloat = -1 / 500, totalAngle: CoreGraphics.CGFloat = .pi / 2)
   public func animate(collectionView: UIKit.UICollectionView, attributes: StorifyMe.AnimatedCollectionViewLayoutAttributes)
-}
-@_hasMissingDesignatedInitializers public class StoeifyMeSingleton {
-  public static var shared: StorifyMe.StoeifyMeSingleton
-  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StoriesCollectionView : UIKit.UICollectionView {
   @_Concurrency.MainActor(unsafe) weak public var eventDelegate: StorifyMe.StoryEventProtocol?
@@ -46,30 +39,6 @@ extension StorifyMe.StoriesCollectionView : StorifyMe.StoryEventProtocol {
   @_Concurrency.MainActor(unsafe) public func onStoryClose(story: StorifyMe.StoryModel)
   @_Concurrency.MainActor(unsafe) public func onAction(type: Swift.String, data: [Swift.String : Any]?)
   @_Concurrency.MainActor(unsafe) public func onEvent(type: Swift.String, data: [Swift.String : Any]?)
-}
-public enum Direction : Swift.Int {
-  case undetermined, left, right, bottomUp, topDown
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public protocol CubeTransitionViewDelegate : ObjectiveC.NSObject {
-  func pageView(atIndex: Swift.Int) -> UIKit.UIView
-  func numberofPages() -> Swift.Int
-  func pageDidChanged(index: Swift.Int, direction: StorifyMe.Direction)
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CubeTransitionInfiniteView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: StorifyMe.CubeTransitionViewDelegate?
-  @_Concurrency.MainActor(unsafe) public var offsetCachedPageNumber: Swift.Int
-  @_Concurrency.MainActor(unsafe) public var pageFlipAnimationDuration: Swift.Double
-  @_Concurrency.MainActor(unsafe) public var pageResetAnmationDuration: Swift.Double
-  @_Concurrency.MainActor(unsafe) public var gestureSpeedForPageFlipping: CoreGraphics.CGFloat
-  @_Concurrency.MainActor(unsafe) public var gestureDistanceForPageFlipping: CoreGraphics.CGFloat
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) public func reloadData()
-  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StoryView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) weak public var eventDelegate: StorifyMe.StoryEventProtocol? {
@@ -169,8 +138,5 @@ public protocol WidgetCustimizationProtocol {
   @objc override dynamic public init()
   @objc deinit
 }
-extension StorifyMe.Direction : Swift.Equatable {}
-extension StorifyMe.Direction : Swift.Hashable {}
-extension StorifyMe.Direction : Swift.RawRepresentable {}
 extension StorifyMe.ImageShape : Swift.Equatable {}
 extension StorifyMe.ImageShape : Swift.Hashable {}

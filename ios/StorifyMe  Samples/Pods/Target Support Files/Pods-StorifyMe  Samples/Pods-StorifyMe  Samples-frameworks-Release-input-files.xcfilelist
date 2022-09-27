@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-StorifyMe  Samples/Pods-StorifyMe  Samples-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/StorifyMe/StorifyMe.framework/StorifyMe

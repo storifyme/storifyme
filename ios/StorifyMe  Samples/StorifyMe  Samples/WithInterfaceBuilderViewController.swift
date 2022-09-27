@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import StorifyMe
+
 class WithInterfaceBuilderViewController: UIViewController {
 
-    @IBOutlet weak var storyView: StoryView!
+   // @IBOutlet weak var storyView: StoryView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,12 @@ class WithInterfaceBuilderViewController: UIViewController {
         
         storyView.setWidgetConfig(config: newConf)*/
         
-        storyView.load()
+       /* storyView.load()
         //add delegates (optional)
         storyView?.eventDelegate = self
         
         //add delegate (optional)
-        storyView.eventDelegate = self
+        storyView.eventDelegate = self*/
     }
     
 
@@ -43,7 +43,7 @@ class WithInterfaceBuilderViewController: UIViewController {
     */
 
 }
-extension WithInterfaceBuilderViewController : StoryEventProtocol
+/*extension WithInterfaceBuilderViewController : StoryEventProtocol
 {
     func onAction(type: String, data: [String : Any]?) {
         print("On action \(type), with data \(data)")
@@ -71,3 +71,4 @@ extension WithInterfaceBuilderViewController : StoryEventProtocol
     
     
 }
+*/

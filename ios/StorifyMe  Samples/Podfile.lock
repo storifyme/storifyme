@@ -1,15 +1,21 @@
 PODS:
-  - StorifyMe (1.2.15)
+  - SDWebImage (5.13.4):
+    - SDWebImage/Core (= 5.13.4)
+  - SDWebImage/Core (5.13.4)
+  - StorifyMe (1.2.20):
+    - SDWebImage
 
 DEPENDENCIES:
   - StorifyMe
 
 SPEC REPOS:
   trunk:
+    - SDWebImage
     - StorifyMe
 
 SPEC CHECKSUMS:
-  StorifyMe: b3d737f7a2d5830caa67dedc96efae774d77c6b2
+  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+  StorifyMe: 08c496ad0663f9fa6a54d7d0963b40bfc3fa3fa9
 
 PODFILE CHECKSUM: 23c8fa5fe02daf14d3db802f719bc60e46641a24
 

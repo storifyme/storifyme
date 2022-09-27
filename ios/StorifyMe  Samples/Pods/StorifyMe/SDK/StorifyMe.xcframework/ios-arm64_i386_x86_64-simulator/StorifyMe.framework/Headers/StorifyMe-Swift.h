@@ -242,13 +242,6 @@ SWIFT_CLASS("_TtC9StorifyMe38AnimatedCollectionViewLayoutAttributes")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC9StorifyMe26CubeTransitionInfiniteView")
-@interface CubeTransitionInfiniteView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-@end
-
 @class UICollectionViewLayout;
 
 /// This class is the main  of story view
@@ -542,13 +535,6 @@ SWIFT_CLASS("_TtC9StorifyMe38AnimatedCollectionViewLayoutAttributes")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC9StorifyMe26CubeTransitionInfiniteView")
-@interface CubeTransitionInfiniteView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-@end
-
 @class UICollectionViewLayout;
 
 /// This class is the main  of story view
@@ -840,13 +826,6 @@ SWIFT_CLASS("_TtC9StorifyMe38AnimatedCollectionViewLayoutAttributes")
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC9StorifyMe26CubeTransitionInfiniteView")
-@interface CubeTransitionInfiniteView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
 @class UICollectionViewLayout;
